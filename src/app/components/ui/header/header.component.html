@@ -24,11 +24,11 @@
 </header>
 <header class="header header-fixed shadow"  style="background-color: white;" [hidden]="!global.isScrollingDown"  >
     <div class="header-content" [hidden]="!global.isScrollingDown" >
-        <div class="left-content">
+        <!-- <div class="left-content">
             <a href="javascript:void(0);" class="back-btn">
                 <i class="icon feather icon-chevron-left"></i>
             </a>
-        </div>
+        </div> -->
         <div class="mid-content px-2">
             <div class="input-group input-group-icon input-sm">
                 <span class="input-group-text">
@@ -46,7 +46,7 @@
                 </li> -->
                 
                 <li class="nav-item" >
-                    <button class="nav-link"   data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="icon feather icon-list"></i></button>
+                    <button class="nav-link"  (click)="global.setModalType('filter')" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="icon feather icon-list"></i></button>
                 </li>
             </ul>
             <!-- <a href="cart.html" class="notification-badge font-20">
@@ -58,12 +58,15 @@
     <app-categories></app-categories>
 </header>
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasRightLabel">Búsquueda Avanzada</h5>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"><i class="icon feather icon-x"></i></button>
-    </div>
-    <div class="offcanvas-body">
-      <app-categories></app-categories>
-      <app-services></app-services>
-    </div>
+    <div class="offcanvas-header" [hidden]="global.modalType=='reel'">
+        <h5 class="offcanvas-title" id="offcanvasRightLabel" [hidden]="global.modalType=='reel'">Búsquueda Avanzada</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"><i class="icon feather icon-x"></i></button>
+      </div>
+      <div class="offcanvas-body" [hidden]="global.modalType=='reel'">
+        <app-categories></app-categories>
+        <app-services></app-services>
+      </div>
+      <app-reeldetail [hidden]="global.modalType=='filter'">
+        
+      </app-reeldetail>
   </div>	

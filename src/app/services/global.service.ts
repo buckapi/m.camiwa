@@ -10,12 +10,12 @@ export interface Clinic {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class GlobalService {
   isScrollingDown = false;
   lastScrollTop = 0;
-  scrollThreshold = 380; 
+  scrollThreshold = 380;
   specialists: any[] = [];
   clinicSelected: Clinic = {
     id: 0,
@@ -23,15 +23,19 @@ export class GlobalService {
     address: '',
     phoneNumber: '',
     images: [], // Inicializa con un array vacío
-    services: []
+    services: [],
   };
-  activeRoute="home";
-  constructor() { }
-  setRoute(route:string){
-    this.activeRoute=route;
+  activeRoute = 'home';
+  modalType = 'filter';
+  constructor() {}
+  setRoute(route: string) {
+    this.activeRoute = route;
   }
-  viewClinic(clinic:any){
-    this.clinicSelected=clinic;
-    this.activeRoute="clinicdetail";
+  setModalType(modalType: string) {
+    this.modalType = modalType;
+  }
+  viewClinic(clinic: any) {
+    this.clinicSelected = clinic;
+    this.activeRoute = 'clinicdetail';
   }
 }

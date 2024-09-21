@@ -12,7 +12,7 @@ import { GlobalService } from '@app/services/global.service';
 })
 export class ReelsComponent {
   get reels() {
-    return Object.entries(this.config.defaultConfig.categories);
+    return Object.entries(this.config.defaultConfig.reels);
   }
   constructor(  public config: ConfigService,public global:GlobalService){
   

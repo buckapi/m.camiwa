@@ -3,11 +3,13 @@ import { Component,HostListener } from '@angular/core';
 import { CategoriesComponent } from '@app/components/categories/categories.component';
 import { GlobalService } from '@app/services/global.service';
 import { ServicesComponent } from "../../services/services.component";
+import { ReeldetailComponent } from '@app/components/reeldetail/reeldetail.component';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, CategoriesComponent, ServicesComponent],
+  imports: [ ReeldetailComponent, 
+      CommonModule, CategoriesComponent, ServicesComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
