@@ -18,6 +18,6 @@ export class ReelsComponent {
   
   }
   selectCategory(categoryKey: string) {
-    this.config.selectCategory(categoryKey as keyof typeof this.config.defaultConfig.categories);
+    // this.config.selectCategory(categoryKey as keyof typeof this.config.defaultConfig.reels);
   }
 }

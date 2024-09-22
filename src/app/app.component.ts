@@ -19,6 +19,7 @@ import { LoginComponent } from './components/login/login.component';
 import { BackheaderComponent } from './components/ui/backheader/backheader.component';
 import { MessagesComponent } from './components/messages/messages.component';
 import { ChatComponent } from './components/chat/chat.component';
+import { RealtimeCategoriesService } from './services/realtime-catwgories.service';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -51,6 +52,8 @@ export class AppComponent implements OnInit {
   }
   constructor(
     private realtimeSpecialistsService: RealtimeSpecialistsService,
+    private realtimeCategoriesService: RealtimeCategoriesService,
+
     public global: GlobalService,
     public scriptLoader: ScriptLoaderService,
     private loadStyleService: LoadStyleService,
@@ -66,6 +69,9 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.realtimeSpecialistsService.specialists$.subscribe((data) => {
       this.global.specialists = data;
+    });
+    this.realtimeCategoriesService.categories$.subscribe((data) => {
+      this.global.categories = data;
     });
     // Cargar estilos de forma dinámica
 

@@ -13,15 +13,13 @@ export class ConfigService {
     defaultLanguage: 'es',
     itemsPerPage: 10,
     theme: 'light',
-
-    // Mapa de categorías con claves conocidas
     reels: {
       uno: 'https://unsplash.it/g/1500/2200?image=838',
       dos: 'https://unsplash.it/g/1500/1000?image=1078',
       tres: 'https://unsplash.it/g/1500/1000?image=1077',
       cuatro: 'https://unsplash.it/g/1500/1200?image=345'
     },
-
+    // Mapa de categorías con claves conocidas
     categories: {
       salud_general: 'Consultas Generales',
       urgencias: 'Urgencias Veterinarias',

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 export interface Clinic {
   id: number;
   name: string;
+  full_name: string;
   address: string;
   phoneNumber: string;
   images: string[]; // O el tipo adecuado para las imágenes
@@ -17,9 +18,11 @@ export class GlobalService {
   lastScrollTop = 0;
   scrollThreshold = 380;
   specialists: any[] = [];
+  categories: any[] = [];
   clinicSelected: Clinic = {
     id: 0,
     name: '',
+    full_name: '',
     address: '',
     phoneNumber: '',
     images: [], // Inicializa con un array vacío
